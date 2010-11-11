@@ -5,22 +5,25 @@
 package fr.alma.hadlm1cs.connectors;
 
 import fr.alma.hadl.annotations.Connector;
+import fr.univnantes.alma.hadlm2.composant.Composant;
 import fr.univnantes.alma.hadlm2.connecteur.ConnecteurPS;
 import fr.univnantes.alma.hadlm2.exceptions.WrongTypeException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  *
  * @author indy
  */
-@Connector("CMDBQuery")
-public class CMDBQuery extends ConnecteurPS {
+@Connector("ConnPSIdent")
+public class ConnPSIdent extends ConnecteurPS {
 
-    public CMDBQuery() throws WrongTypeException {
-        super(null, null, null, null);
+    public ConnPSIdent(Composant source, Field from, Composant target, Method to) throws WrongTypeException {
+        super(source, from, target, to);
     }
 
     @Override
     public <S, E> S before(E arg) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return (S) arg;
     }
 }
