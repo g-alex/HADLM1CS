@@ -1,4 +1,4 @@
-package com.mycompany.hadlm1cs;
+package fr.alma.hadlm1cs;
 
 /**
  * Hello world!
