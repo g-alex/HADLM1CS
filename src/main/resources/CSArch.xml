@@ -9,15 +9,12 @@
 -->
 
 <configuration name="CSSystem">
-
     <composant name="Client">
         <port name="query" />
         <service name="receive" />
     </composant>
 
-
     <configuration name="Server">
-
         <composant name="ConnManager">
             <service name="parseQuery" />
             <port name="result" />
@@ -30,32 +27,13 @@
             <service name="sendResponse" />
         </composant>
 
-        <connector name="CMDBQuery">
-            <from ref="ConnManager.query" />
-            <to ref="Database.receiveQuery" />
-        </connector>
-
-        <connector name="CMDBResponse">
-            <from ref="Database.sendResponse" />
-            <to ref="ConnManager.receiveResult" />
-        </connector>
+        <connector name="CMDBQuery" from="ConnManager.query" to="Database.receiveQuery" />
+        <connector name="CMDBResponse" from="Database.sendResponse" to="ConnManager.receiveResult" />
 
         <service name="parseQuery" ref="ConnManager.parseQuery" />
         <service name="result" ref="ConnManager.result" />
-        
     </configuration>
 
-
-
-    <connector name="CSQuery">
-        <from ref="Client.query" />
-        <to ref="Server.parseQuery" />
-    </connector>
-    
-    <connector name="CSResponse">
-        <from ref="Server.result" />
-        <to ref="Client.receive" />
-    </connector>
-
-
+    <connector name="CSQuery" from="Client.query" ref="Server.parseQuery" />
+    <connector name="CSResponse" from="Server.result" to="Client.receive" />
 </configuration>

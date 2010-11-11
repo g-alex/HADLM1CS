@@ -16,7 +16,9 @@ public class Client extends SimpleComposant {
 
     @ProvidedInterface("query")
     public String query;
-    
-    @RequiredInterface("result")
-    public String result;
+
+    @RequiredInterface("receive")
+    public void receive(String result) {
+        System.out.println(result);
+    }
 }
