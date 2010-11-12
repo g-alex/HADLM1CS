@@ -17,6 +17,11 @@ public class Client extends SimpleComposant {
     @ProvidedInterface("query")
     public String query;
 
+    @RequiredInterface("setQuery")
+    public void setQuery(String query) {
+        this.set("query", query);
+    }
+
     @RequiredInterface("receive")
     public void receive(String result) {
         System.out.println(result);

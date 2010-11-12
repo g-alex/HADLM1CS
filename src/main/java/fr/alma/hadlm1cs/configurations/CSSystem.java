@@ -4,7 +4,7 @@
  */
 package fr.alma.hadlm1cs.configurations;
 
-import fr.alma.hadl.annotations.Component;
+import fr.alma.hadl.annotations.*;
 import fr.univnantes.alma.hadlm2.composant.Configuration;
 
 /**
@@ -13,4 +13,8 @@ import fr.univnantes.alma.hadlm2.composant.Configuration;
  */
 @Component("CSSystem")
 public class CSSystem extends Configuration {
+
+    @RequiredInterface("run")
+    public void run(String query) {
+    }
 }

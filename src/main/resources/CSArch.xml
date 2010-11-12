@@ -10,6 +10,7 @@
 
 <configuration name="CSSystem">
     <composant name="Client">
+        <service name="setQuery" />
         <port name="query" />
         <service name="receive" />
     </composant>
@@ -36,4 +37,7 @@
 
     <connector name="ConnPSIdent" from="Client.query" ref="Server.parseQuery" />
     <connector name="ConnSSIdent" from="Server.result" to="Client.receive" />
+
+    <service name="run" ref="Client.setQuery" />
+
 </configuration>
