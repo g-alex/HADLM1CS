@@ -35,7 +35,7 @@
         <service name="result" ref="ConnManager.result" />
     </configuration>
 
-    <connector name="ConnPSIdent" from="Client.query" ref="Server.parseQuery" />
+    <connector name="ConnPSIdent" from="Client.query" to="Server.parseQuery" />
     <connector name="ConnSSIdent" from="Server.result" to="Client.receive" />
 
     <service name="run" ref="Client.setQuery" />
