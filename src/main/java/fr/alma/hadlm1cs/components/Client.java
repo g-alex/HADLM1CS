@@ -25,6 +25,7 @@ public class Client extends SimpleComposant {
         System.out.println(result);
     }
 
+    @RunInterface("setQuery")
     public void setQuery() throws IOException {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);

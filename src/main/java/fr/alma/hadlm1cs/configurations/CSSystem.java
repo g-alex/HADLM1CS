@@ -14,6 +14,7 @@ import fr.univnantes.alma.hadlm2.composant.Configuration;
 @Component("CSSystem")
 public class CSSystem extends Configuration {
 
+    @RunInterface("run")
     public void run() {
     }
 }
