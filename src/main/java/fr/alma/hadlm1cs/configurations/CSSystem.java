@@ -14,7 +14,6 @@ import fr.univnantes.alma.hadlm2.composant.Configuration;
 @Component("CSSystem")
 public class CSSystem extends Configuration {
 
-    @RequiredInterface("run")
-    public void run(String query) {
+    public void run() {
     }
 }
