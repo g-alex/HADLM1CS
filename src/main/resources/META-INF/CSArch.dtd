@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/CSArch.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE configuration SYSTEM "CSArch.dtd">
+
+    <configuration>
+    ...
+    </configuration>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT configuration (service|connector|configuration|composant)*>
+<!ATTLIST configuration
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT composant (service|port)*>
+<!ATTLIST composant
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT port EMPTY>
+<!ATTLIST port
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT service EMPTY>
+<!ATTLIST service
+    ref CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT connector EMPTY>
+<!ATTLIST connector
+    ref CDATA #IMPLIED
+    to CDATA #IMPLIED
+    from CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >
