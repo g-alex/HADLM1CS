@@ -19,7 +19,5 @@ public class Server extends Configuration {
     }
 
     @ProvidedInterface("result")
-    public String result() {
-        return null;
-    }
+    public String result;
 }

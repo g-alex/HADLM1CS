@@ -36,8 +36,8 @@
     </configuration>
 
     <connector name="ConnPSIdent" from="Client.query" to="Server.parseQuery" />
-    <connector name="ConnSSIdent" from="Server.result" to="Client.receive" />
+    <connector name="ConnPSIdent" from="Server.result" to="Client.receive" />
 
-    <service name="run" ref="Client.setQuery" />
+    <entrypoint name="run" ref="Client.setQuery" />
 
 </configuration>
